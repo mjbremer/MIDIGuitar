@@ -1,11 +1,12 @@
-Mikey Brewer
-Matt Bremer
-ECE 395 Final Report - Audio-Driven MIDI Controller
+
+# ECE 395 Final Report - Audio-Driven MIDI Controller
+Mikey Brewer  
+Matt Bremer  
 For our project, we chose to create a MIDI controller driven by audio input, such that a user can
 connect a guitar or other instrument, and upon playing a note, generate a corresponding MIDI
 signal with which to control a synthesizer or other device. The main challenges in solving this
 problem were building the circuit and creating minimum-latency and maximum-accuracy
-pitch-detection and attack-detection algorithms.
+pitch-detection and attack-detection algorithms.  
 For our circuit we chose the following components: an STM32F407 discovery board as
 the core processor, an AKM5720 ADC for collecting audio, and an FTDI232 UART-to-USB
 chip for debugging. These devices were chosen primarily based on availability, although the
@@ -13,7 +14,8 @@ STM32F407 was preferable to the supplied ARM M0 processor, as it contained a fas
 M4 processor, as well as a built-in I2S interface, and multiple UARTs, which was useful, as this
 allowed us to use one UART as the actual MIDI interface and use the other purely for debugging
 purposes, specifically transferring full buffers of data so that we could verify the data was what
-was expected.
+was expected.  
+  
 Our first objective was to get the most important pieces of our hardware working
 functionally and successfully communicating with each other early on. We connected the
 STM32F407, AKM5720, and FTDI232, and once we had initialized the connection between the
@@ -21,7 +23,8 @@ ADC and microcontroller, verified that data was being transferred via a high-fre
 oscilloscope. Lastly, we wrote a program that would collect a buffer from the ADC via DMA,
 then transfer that data over the debug UART to be collected into a file on our computer. After
 graphing this data and seeing the expected waveform (supplied to the ADC via a signal
-generator) we were ready to begin working on signal processing.
+generator) we were ready to begin working on signal processing.  
+  
 To begin, we wrote a script in Python to perform online pitch detection. We received
 audio from a Scarlett 2i2 audio interface, performed cepstral pitch detection on it, quantized the
 determined frequency to the nearest equal temperament frequency, and printed the associated
