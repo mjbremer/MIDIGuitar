@@ -1,7 +1,7 @@
 
 # ECE 395 Final Report - Audio-Driven MIDI Controller
-Mikey Brewer  
-Matt Bremer  
+Mikey Brewer and Matt Bremer  
+  
 For our project, we chose to create a MIDI controller driven by audio input, such that a user can
 connect a guitar or other instrument, and upon playing a note, generate a corresponding MIDI
 signal with which to control a synthesizer or other device. The main challenges in solving this
