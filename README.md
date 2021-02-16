@@ -1,5 +1,3 @@
-# MIDIGuitar
-STM32F407-DISC Project to take incoming guitar signal and output associated MIDI
 Mikey Brewer
 Matt Bremer
 ECE 395 Final Report - Audio-Driven MIDI Controller
@@ -38,3 +36,5 @@ have achieved Minimum Viable Product, and can continue to improve the core algor
 add more features, such as support for polyphony, physical MIDI support, velocity-sensitivity, a
 better form factor by placing the design on a PCB, as well as increasing the performance by
 exchanging the microcontroller for a more powerful one, or moving to a DSP chip instead.
+
+
